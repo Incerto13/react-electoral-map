@@ -704,84 +704,86 @@ class Controller extends Component {
   render() {
     return (
       <>
-        <div className="jumbotron">
-          <h1>Electoral College Map</h1>
-          <p className="page-header">270 Votes are Necessary to Win</p>
-        </div>
         <div className="body">
-          <ProgressBar
-            demPercentage={this.state.demPercentage}
-            blankPercentage={this.state.blankPercentage}
-            repPercentage={this.state.repPercentage}
-            demVotes={this.state.demVotes}
-            repVotes={this.state.repVotes}
-            blankVotes={538 - this.state.demVotes - this.state.repVotes}
-          />
-          <div className="toggle-btns">
-            <button
-              onClick={this.partyToggle}
-              value="democrat"
-              className="btn btn-primary dem-btn"
-            >
-              {this.state.partyFocus === "democrat"
-                ? "Selected"
-                : "Select Blue States"}
-            </button>
-
-            {this.state.demVotes >= 270 && (
-              <span className="winner-text" style={{ color: "blue" }}>
-                Democrats Win!
-              </span>
-            )}
-
-            {this.state.repVotes >= 270 && (
-              <span className="winner-text" style={{ color: "red" }}>
-                Republicans Win!
-              </span>
-            )}
-
-            <button
-              onClick={this.partyToggle}
-              value="republican"
-              className="btn btn-primary rep-btn"
-            >
-              {this.state.partyFocus === "republican"
-                ? "Selected"
-                : "Select Red States"}
-            </button>
+          <div className="jumbotron">
+            <h1>Electoral College Map</h1>
+            <p className="page-header">270 Votes are Necessary to Win</p>
           </div>
-          <USAMap
-            title="United States of America"
-            customize={this.statesCustomConfig()}
-            onClick={this.mapHandler}
-          />
-          <div>
-            <div className="dropdown">
-              <h5>Select a Starting View:</h5>
-              <select
-                className="select"
-                defaultValue={this.state.dropdownOption}
-                onChange={this.updateDisplayFromHistorical}
-              >
-                <option value="2000">Reset Map</option>
-                <option value="2012">2012 Actual</option>
-                <option value="2016">2016 Actual</option>
-              </select>
-            </div>
-
-            <SplitElectoralVotes
-              onClick={this.mapHandler}
-              ME1={this.state.states.ME1.color}
-              ME2={this.state.states.ME2.color}
-              ME3={this.state.states.ME3.color}
-              NE1={this.state.states.NE1.color}
-              NE2={this.state.states.NE2.color}
-              NE3={this.state.states.NE3.color}
-              NE4={this.state.states.NE4.color}
+          <div className="content">
+            <ProgressBar
+              demPercentage={this.state.demPercentage}
+              blankPercentage={this.state.blankPercentage}
+              repPercentage={this.state.repPercentage}
+              demVotes={this.state.demVotes}
+              repVotes={this.state.repVotes}
+              blankVotes={538 - this.state.demVotes - this.state.repVotes}
             />
+            <div className="toggle-btns">
+              <button
+                onClick={this.partyToggle}
+                value="democrat"
+                className="btn btn-primary dem-btn"
+              >
+                {this.state.partyFocus === "democrat"
+                  ? "Selected"
+                  : "Select Blue States"}
+              </button>
+
+              {this.state.demVotes >= 270 && (
+                <span className="winner-text" style={{ color: "blue" }}>
+                  Democrats Win!
+                </span>
+              )}
+
+              {this.state.repVotes >= 270 && (
+                <span className="winner-text" style={{ color: "red" }}>
+                  Republicans Win!
+                </span>
+              )}
+
+              <button
+                onClick={this.partyToggle}
+                value="republican"
+                className="btn btn-primary rep-btn"
+              >
+                {this.state.partyFocus === "republican"
+                  ? "Selected"
+                  : "Select Red States"}
+              </button>
+            </div>
+            <USAMap
+              title="United States of America"
+              customize={this.statesCustomConfig()}
+              onClick={this.mapHandler}
+            />
+            <div>
+              <div className="dropdown">
+                <h5>Select a Starting View:</h5>
+                <select
+                  className="select"
+                  defaultValue={this.state.dropdownOption}
+                  onChange={this.updateDisplayFromHistorical}
+                >
+                  <option value="2000">Reset Map</option>
+                  <option value="2012">2012 Actual</option>
+                  <option value="2016">2016 Actual</option>
+                </select>
+              </div>
+
+              <SplitElectoralVotes
+                onClick={this.mapHandler}
+                ME1={this.state.states.ME1.color}
+                ME2={this.state.states.ME2.color}
+                ME3={this.state.states.ME3.color}
+                NE1={this.state.states.NE1.color}
+                NE2={this.state.states.NE2.color}
+                NE3={this.state.states.NE3.color}
+                NE4={this.state.states.NE4.color}
+              />
+            </div>
+            <br /> <br />
+            <hr />
           </div>
-          <br /> <br />
-          <hr />
         </div>
       </>
     );
