@@ -1,33 +1,78 @@
-.App {
-  text-align: center;
+body {
+  margin-left: 10%;
+  margin-right: 10%;
+  font-family: sans-serif;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  font-size: 450%;
+  font-weight: bold;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.page-header {
+  font-size: 150%;
 }
 
-.App-link {
-  color: #61dafb;
+.winner-text {
+  font-size: 200%;
+  margin-left: 18%;
+  margin-right: 0%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+path {
+  pointer-events: all;
+}
+path:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+button {
+  margin: 5px;
+}
+
+.results {
+  margin-left: 10px;
+}
+
+.toggle-btns {
+  width: 1000px;
+  margin-top: 40px;
+  margin-bottom: 140px;
+  overflow: hidden;
+}
+
+.dem-btn {
+  float: left;
+  background-color: blue;
+  font-weight: bold;
+}
+
+.dem-btn:hover {
+  background-color: blue;
+  opacity: 0.75;
+  cursor: pointer;
+}
+
+.rep-btn {
+  float: right;
+  background-color: red;
+  font-weight: bold;
+}
+
+.rep-btn:hover {
+  background-color: red;
+  opacity: 0.75;
+  cursor: pointer;
+}
+
+.dropdown {
+  display: inline-block;
+  margin-top: 0%;
+  margin-left: 500px;
+  /* margin-right: 25%; */
+}
+
+.dropdown select {
+  margin-left: 20%;
 }
