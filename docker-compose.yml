@@ -3,6 +3,5 @@ services:
   electoral-map:
     container_name: electoral-map
     build: .
-    image: electoral-map
     ports:
       - "8012:80"
