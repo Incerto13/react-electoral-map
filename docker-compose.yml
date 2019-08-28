@@ -2,6 +2,7 @@ version: "3"
 services:
   electoral-map:
     container_name: electoral-map
+    restart: unless-stopped
     build: .
     ports:
       - "8012:80"
