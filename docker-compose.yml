@@ -1,8 +1,11 @@
-version: "3"
+
 services:
   electoral-map:
     container_name: electoral-map
+    environment:
+      ENV: ${ENV}
+    image: incerto13/react-electoral-map:${ENV}-latest
     restart: unless-stopped
     build: .
     ports:
-      - "8012:80"
+      - 8012:80
