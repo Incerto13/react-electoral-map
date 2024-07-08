@@ -13,7 +13,7 @@ env:
   ENVS: ${{ secrets.STAGING_ENVS }}
   
 jobs:
-  build:
+  build: 
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
