@@ -17,6 +17,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: 
+          node-version: 14
       - name: Docker Login
         run:
           docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
@@ -24,5 +27,5 @@ jobs:
         run: echo "$ENVS" > .env
       - name: Build and Push to Docker Hub
         run: |
-          sudo docker-compose up --build
+          docker-compose up --build
           docker push incerto13/react-electoral-map:staging-latest 
