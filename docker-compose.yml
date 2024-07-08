@@ -6,6 +6,8 @@ services:
       ENV: ${ENV}
     image: incerto13/react-electoral-map:${ENV}-latest
     restart: unless-stopped
-    build: .
+    build: 
+      context: .
+      dockerfile: Dockerfile
     ports:
       - 8012:80
