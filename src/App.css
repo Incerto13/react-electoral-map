@@ -1,5 +1,5 @@
 .body {
-  width: inherit;
+  min-width: 900px; width: 78%;
   margin-left: 10%;
   margin-right: 10%;
   display: inline-block;
