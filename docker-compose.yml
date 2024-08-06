@@ -1,7 +1,7 @@
 
 services:
-  electoral-map:
-    container_name: electoral-map
+  react-electoral-map:
+    container_name: react-electoral-map
     environment:
       ENV: ${ENV}
     image: incerto13/react-electoral-map:${ENV}-latest

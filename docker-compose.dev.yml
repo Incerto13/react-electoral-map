@@ -1,11 +1,10 @@
-# only run from context of parent incerto-k8 directory when orchestrating all portfolio apps in local dev
 
 services:
-  electoral-map:
-    container_name: electoral-map
+  react-electoral-map:
+    container_name: react-electoral-map
     restart: unless-stopped
     build: 
-      context: react-electoral-map/
+      context: .
       dockerfile: Dockerfile
     ports:
       - 8012:80
