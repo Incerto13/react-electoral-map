@@ -14,7 +14,7 @@ bash run-docker-dev.sh
 ```
 Open [http://localhost:8012](http://localhost:8012) to view it in the browser.
 
-## Running in docker (pull from remote images)
+## Running in docker
 ```bash
 bash run-docker.sh
 ```
