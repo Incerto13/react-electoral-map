@@ -2,9 +2,9 @@
 services:
   react-electoral-map:
     container_name: react-electoral-map
-    restart: unless-stopped
     build: 
       context: .
       dockerfile: Dockerfile
+    restart: unless-stopped
     ports:
       - 8012:80

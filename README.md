@@ -1,12 +1,15 @@
+## Installation
+
+```bash
+npm install
+```
 
 ## Running locally
 
 ```bash
-npm install
 npm start
 ```
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
 
 ## Running in docker (local dev)
 ```bash
