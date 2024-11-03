@@ -1,12 +1,24 @@
 .body {
-  min-width: 900px; width: 78%;
-  margin-left: 10%;
-  margin-right: 10%;
+  min-width: 900px; width: 100%;
+  /* margin-left: 15%;
+  margin-right: 10%; */
   display: inline-block;
+  text-align: center;
 }
 
 .content {
-  display: inline-block;
+  /* margin-left: 15%; */
+  display: inline-block; 
+  margin-left: auto;    
+  margin-right: auto;
+  justify-content: center;
+}
+
+
+.jumbotron {
+  display: inline-block;   
+  justify-content: center;
+  width: 100%;
 }
 
 h1 {
@@ -41,10 +53,13 @@ button {
 }
 
 .toggle-btns {
-  width: 1000px;
+  /* width: 1000px; */
+  width: 70%;
   margin-top: 40px;
   margin-bottom: 80px;
   overflow: hidden;
+
+  display: inline-block;   
 }
 
 .dem-btn {

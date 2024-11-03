@@ -5,7 +5,6 @@ npm install
 ```
 
 ## Running locally
-
 ```bash
 npm start
 ```
@@ -17,7 +16,7 @@ bash run-docker-dev.sh
 ```
 Open [http://localhost:8012](http://localhost:8012) to view it in the browser.
 
-## Running in docker
+## Build docker images (for postgres, server and web for ci pipeline)
 ```bash
-bash run-docker.sh
-```
+bash build-docker.sh
+``` 

@@ -1,13 +1,14 @@
 
 services:
   react-electoral-map:
+    image: incerto13/react-electoral-map:${ENV}-latest
     container_name: react-electoral-map
     build: 
       context: .
       dockerfile: Dockerfile
-    environment:
-      ENV: ${ENV}
-    image: incerto13/react-electoral-map:${ENV}-latest
-    restart: unless-stopped
-    ports:
-      - 8012:80
+    # environment:
+    #   ENV: ${ENV}
+
+    # restart: unless-stopped
+    # ports:
+    #   - 8012:80
