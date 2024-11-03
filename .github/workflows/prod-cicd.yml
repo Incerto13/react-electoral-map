@@ -1,0 +1,28 @@
+name: Prod CI/CD
+on:
+  workflow_dispatch:
+  push:
+    branches: [ "main" ]
+  pull_request: 
+    branches: [ "main" ]
+
+env: 
+  ENV: prod 
+  DOCKER_USER: ${{ secrets.DOCKER_USERNAME }}
+  DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+  ENVS: ${{ secrets.PROD_ENVS }}
+  
+jobs:
+  build: 
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Docker Login
+        run:
+          docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+      - name: Generate .env file
+        run: echo "$ENVS" > .env
+      - name: Build and Push to Docker Hub
+        run: |
+          bash build-docker.sh
+          docker push incerto13/react-electoral-map:prod-latest 
